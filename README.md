@@ -4,8 +4,8 @@
 To design a half subtractor and full subtractor circuit and verify its truth table in Quartus using Verilog programming.
 
 ## Equipments Required:
-## Hardware – PCs, Cyclone II , USB flasher
-## Software – Quartus prime
+### Hardware – PCs, Cyclone II , USB flasher
+### Software – Quartus prime
 ## Theory
 Subtractor circuits take two binary numbers as input and subtract one binary number input from the other binary number input. Similar to adders, it gives out two outputs, difference and borrow (carry-in the case of Adder). There are two types of subtractors.
 
@@ -26,29 +26,56 @@ A full subtractor is a combinational circuit that performs subtraction involving
 Diff = A ⊕ B ⊕ Bin B = A'Bin + A'B + BBin
 
 ## Procedure
-
-
-
-Write the detailed procedure here 
-
+### STEP1:
+Use module program name(input,output) to start the verilog program.
+### STEP2:
+Assign inputs and outputs.
+### STEP3:
+End the verilog programusinf keyword endmodule.
 
 ## Program:
-/*
 Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-
+### Developed by: Haarish.V
+### RegisterNumber:  23013963
+### Half Subtractor:
+```
+module HLFSUB(x,y,b,d);
+input x,y;
+output b,d;
+assign d=x^y;
+assign b=~x&y;
+endmodule 
+```
+### Full Subtractor:
+```
+module FULLSUB(x,y,z,d,b);
+input x,y,z;
+output d,b;
+assign d=x^y^z;
+assign b=~x&(y^z)|y&z;
+endmodule
+```
 ## Output:
+## Half Subtractor:
+### Code:
+![code](/CODE%20HS.png)
+### Truthtable:
+![TT](/TT%20HS.png)
 
-## Truthtable
 
+###  RTL realization:
+![RTL](/RTL%20HS.png)
 
-
-##  RTL realization
-
-
-## Timing diagram 
-
+### Timing diagram: 
+![WAVE](/WAVE%20HS.png)
+## Full Subtractor:
+### Code:
+![code](/CODE%20FS.png)
+### Truth Table:
+![TT](/TT%20FS.png)
+### RTL realization:
+![RTL](/RTL%20FS.png)
+### Timing Diagram:
+![WAVE](/WAVE%20FS.png)
 ## Result:
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
